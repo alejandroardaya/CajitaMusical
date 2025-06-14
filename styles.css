@@ -1,0 +1,8 @@
+body { display:flex; align-items:center; justify-content:center; height:100vh; background:#faf3e0; }
+.cajita { position:relative; width:200px; }
+.tapa { position:absolute; top:0; width:200px; height:50px; background:#b5651d; transform-origin:top center; transition:transform .8s ease-out; }
+.base { margin-top:50px; width:200px; background:#d2691e; height:200px; position:relative; overflow:hidden; }
+.bailarina { width:50px; height:100px; background:url('https://i.imgur.com/OYq3zxyz.png') center/contain no-repeat; position:absolute; bottom:0; left:75px; transform-origin:bottom center; animation:spin 0s linear infinite paused; }
+@keyframes spin { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
+button { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); padding:8px 16px; font-size:16px; }
+.hidden { display:none; }

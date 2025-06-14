@@ -1,78 +1,63 @@
 body {
+  background: #fcefdc;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #faf3e0;
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .cajita {
   position: relative;
-  width: 300px;
+  width: 320px;
 }
 
 .tapa {
   position: absolute;
   top: 0;
-  width: 300px;
-  height: 70px;
-  background: #b5651d;
+  width: 320px;
+  height: 80px;
+  background: #a0522d;
   transform-origin: top center;
-  transition: transform 1.5s ease-out;
-  border-radius: 8px 8px 0 0;
+  transition: transform 1.2s ease-out;
+  border-radius: 12px 12px 0 0;
 }
 
 .base {
-  margin-top: 70px;
-  width: 300px;
-  height: 300px;
-  background: #d2691e;
-  position: relative;
-  overflow: hidden;
+  margin-top: 80px;
+  width: 320px;
+  height: 250px;
+  background: #cd853f;
   border-radius: 0 0 12px 12px;
-  padding-top: 20px;
-}
-
-.bailarina {
-  width: 100px;
-  height: 180px;
-  background: url('https://cdn.pixabay.com/photo/2021/09/08/12/10/ballet-6606766_960_720.png') center/contain no-repeat;
-  position: absolute;
-  bottom: 60px;
-  left: 100px;
-  transform-origin: bottom center;
-  animation: spin 4s linear infinite paused;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-button {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  background: #fff;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 20px;
+  text-align: center;
+  position: relative;
 }
 
 #mensaje {
-  display: none;
   font-size: 20px;
-  text-align: center;
-  margin-top: 10px;
-  padding: 0 15px;
   color: #4b2e0c;
+  margin-top: 30px;
+  opacity: 0;
+  transition: opacity 1.2s ease-in;
 }
 
-.hidden {
-  display: none;
+#mensaje.visible {
+  opacity: 1;
+}
+
+#play {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.oculto {
+  display: block;
+  visibility: hidden;
 }

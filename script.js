@@ -2,16 +2,25 @@ const tapa = document.querySelector('.tapa');
 const mensaje = document.getElementById('mensaje');
 const boton = document.getElementById('play');
 
+// Crear el contexto de audio global
+const context = new (window.AudioContext || window.webkitAudioContext)();
+
 boton.addEventListener('click', () => {
   tapa.style.transform = 'rotateX(-90deg)';
   mensaje.classList.remove('oculto');
   mensaje.classList.add('visible');
-  playMelody();
+
+  // Reanudar el contexto de audio antes de reproducir
+  if (context.state === 'suspended') {
+    context.resume().then(playMelody);
+  } else {
+    playMelody();
+  }
+
   boton.disabled = true;
 });
 
 function playMelody() {
-  const context = new (window.AudioContext || window.webkitAudioContext)();
   const notes = [
     { freq: 264, dur: 0.3 }, { freq: 264, dur: 0.3 }, { freq: 297, dur: 0.6 }, { freq: 264, dur: 0.6 },
     { freq: 352, dur: 0.6 }, { freq: 330, dur: 1.2 },
